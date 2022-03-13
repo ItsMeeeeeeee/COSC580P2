@@ -20,7 +20,7 @@ def extractVaccination():
     print(df.columns)
     keep = ['date', 'location', 'total_vaccinations', 'total_distributed',
             'people_vaccinated', 'people_fully_vaccinated',
-            'daily_vaccinations', 'share_doses_used', 'total_boosters']
+            'daily_vaccinations', 'total_boosters']
     df = df[keep]
     df['date'] = pd.to_datetime(df['date'])
     df = df.sort_values(by="date")
