@@ -21,10 +21,12 @@ def extractVaccination():
     keep = ['date', 'location', 'total_vaccinations', 'total_distributed',
             'people_vaccinated', 'people_fully_vaccinated',
             'daily_vaccinations', 'share_doses_used', 'total_boosters']
+    df = df[keep]
     df['date'] = pd.to_datetime(df['date'])
     df = df.sort_values(by="date")
     df = df.reset_index(drop=True)
     df.to_csv("./Extraction data/USVaccination.csv", index=False)
+
 
 extractUsCovid()
 extractVaccination()
